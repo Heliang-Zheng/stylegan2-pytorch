@@ -15,7 +15,7 @@ def generate(args, g_ema, device, mean_latent):
            
            utils.save_image(
             sample,
-            f'sample/{str(i).zfill(6)}.png',
+            'sample/{}.png'.format(str(i).zfill(6)),
             nrow=1,
             normalize=True,
             range=(-1, 1),
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--size', type=int, default=1024)
+    parser.add_argument('--size', type=int, default=128)
     parser.add_argument('--sample', type=int, default=1)
     parser.add_argument('--pics', type=int, default=20)
     parser.add_argument('--truncation', type=float, default=1)
